@@ -1,11 +1,9 @@
 #include <iostream>
 
-using namespace std;
-
 int main() {
 	int a, b;
-	cin >> a >> b;
+	std::cin >> a >> b;
 	int ans = a + b;
-	cout << ans << endl;
+	std::cout << ans << std::endl;
 	return 0;
 }
