@@ -16,10 +16,14 @@
 1) Свалете инсталатора LLVM-17.0.1-win64.exe (или win32) от тук: https://github.com/llvm/llvm-project/releases/tag/llvmorg-17.0.1
 2) Инсталирайте LLVM - колекция от инструменти за програмиране, включваща компилатора clang.
 3) Инсталирайте произволен текстов редактор. Дори и Notepad ще свърши работа, но ето някои редактори, които препоръчваме:
+
     Visual Studio Code : https://code.visualstudio.com/download (Kalin Georgiev's choise)
+
     Sublime Text 4 : https://www.sublimetext.com/download
+
     Notepad++ : https://notepad-plus-plus.org/downloads/v8.5.7/ (Criminally Underrated)
-    Vim / NeoVim / Emacs: нямате нужда от линк. Ако искате да ползвате тези, сте мазохисти
+
+    Vim / NeoVim / Emacs: нямате нужда от линк.
 
 ## Задачи
 
