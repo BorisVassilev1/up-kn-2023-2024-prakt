@@ -5,10 +5,9 @@
 
 // 2
 bool isPrime(unsigned int n) {
-	if(n <= 1) return false;
-	for (int i = 2; i < n; ++ i) {
-		if(n % i == 0)
-			return false;
+	if (n <= 1) return false;
+	for (int i = 2; i < n; ++i) {
+		if (n % i == 0) return false;
 	}
 	return true;
 }
@@ -16,10 +15,10 @@ bool isPrime(unsigned int n) {
 // 3
 void printPrimes(unsigned int n) {
 	unsigned int foundPrimes = 0;
-	for(int i = 2; foundPrimes < n; ++ i) {
-		if(isPrime(i)) {
+	for (int i = 2; foundPrimes < n; ++i) {
+		if (isPrime(i)) {
 			std::cout << i << ' ';
-			++ foundPrimes;
+			++foundPrimes;
 		}
 	}
 	std::cout << std::endl;
@@ -27,26 +26,24 @@ void printPrimes(unsigned int n) {
 
 // 4
 void divisors(unsigned int n) {
-	for(int i = 1; i <= n; ++ i) {
-		if(n % i == 0) {
-			std::cout << i << " ";
-		}
+	for (int i = 1; i <= n; ++i) {
+		if (n % i == 0) { std::cout << i << " "; }
 	}
 	std::cout << std::endl;
 }
 
 // 5
 void decompose(unsigned int n) {
-	bool hasFoundFirstDivisor = false;
-	unsigned int count = 0;
-	for (int i = 2; i <= n; ++ i) {
+	bool		 hasFoundFirstDivisor = false;
+	unsigned int count				  = 0;
+	for (int i = 2; i <= n; ++i) {
 		count = 0;
-		while(n % i == 0) {
-			n = n / i;	
-			++ count;
+		while (n % i == 0) {
+			n = n / i;
+			++count;
 		}
-		if(count > 0) {
-			if(hasFoundFirstDivisor) std::cout << '*';
+		if (count > 0) {
+			if (hasFoundFirstDivisor) std::cout << '*';
 			hasFoundFirstDivisor = true;
 			std::cout << i << '^' << count;
 		}
@@ -58,10 +55,10 @@ void decompose(unsigned int n) {
 int digitDifference(unsigned int n) {
 	int min = 9;
 	int max = 0;
-	while(n != 0) {
+	while (n != 0) {
 		int current = n % 10;
-		min = std::min(min, current);
-		max = std::max(max, current);
+		min			= std::min(min, current);
+		max			= std::max(max, current);
 		n /= 10;
 	}
 	return max - min;
@@ -69,30 +66,33 @@ int digitDifference(unsigned int n) {
 
 // 7
 void christmasTree(unsigned int n) {
-	for(int i = 0; i < n; ++ i) { // row
-		for(int j = 0; j < (n - i); ++ j) std::cout << " ";
+	for (int i = 0; i < n; ++i) {	  // row
+		for (int j = 0; j < (n - i); ++j)
+			std::cout << " ";
 		std::cout << "*";
-		for(int j = 0; j < i; ++ j) std::cout << "**";
+		for (int j = 0; j < i; ++j)
+			std::cout << "**";
 		std::cout << std::endl;
 	}
-	for(int i = 0; i < n; ++ i) std::cout << " ";
+	for (int i = 0; i < n; ++i)
+		std::cout << " ";
 	std::cout << "|" << std::endl;
 }
 
-// 8 
+// 8
 int supermajority(unsigned int n) {
-	int counter = 0;
+	int counter				  = 0;
 	int current_supermajority = 0;
-	for(int i = 0; i < n; ++ i) {
+	for (int i = 0; i < n; ++i) {
 		int current;
 		std::cin >> current;
 
-		if(current == current_supermajority) ++ counter;
-		else -- counter;
-		
-		if(counter < 0) {
+		if (current == current_supermajority) ++counter;
+		else --counter;
+
+		if (counter < 0) {
 			current_supermajority = current;
-			counter = 1;
+			counter				  = 1;
 		}
 	}
 	return current_supermajority;
@@ -101,7 +101,7 @@ int supermajority(unsigned int n) {
 // 9
 int pow(int a, unsigned int b) {
 	int result = 1;
-	for(int i = 0; i < b; ++ i) {
+	for (int i = 0; i < b; ++i) {
 		result *= a;
 	}
 	return result;
@@ -109,15 +109,15 @@ int pow(int a, unsigned int b) {
 
 // 9*
 int fastPow(int a, unsigned int b) {
-	int exp = a;
+	int exp	   = a;
 	int result = 1;
-	while(b != 0) {
-		if(b % 2 == 0) {
+	while (b != 0) {
+		if (b % 2 == 0) {
 			exp *= exp;
 			b /= 2;
 		} else {
 			result *= exp;
-			-- b;
+			--b;
 		}
 	}
 	return result;
@@ -125,22 +125,18 @@ int fastPow(int a, unsigned int b) {
 
 int sumDivisors(unsigned int n) {
 	int sum = 0;
-	for(int i = 1; i < n; ++ i) {
-		if(n % i == 0) {
-			sum += i;
-		}
+	for (int i = 1; i < n; ++i) {
+		if (n % i == 0) { sum += i; }
 	}
 	return sum;
 }
 
-bool isMagicNumber(unsigned int n) {
-	return sumDivisors(n) == n;
-}
+bool isMagicNumber(unsigned int n) { return sumDivisors(n) == n; }
 
 // 10
 void printMagicNumbers(unsigned int a, unsigned int b) {
-	for(int i = a; i <= b; ++ i) {
-		if(isMagicNumber(i)) std::cout << i << " ";
+	for (int i = a; i <= b; ++i) {
+		if (isMagicNumber(i)) std::cout << i << " ";
 	}
 	std::cout << std::endl;
 }
@@ -161,7 +157,7 @@ int main() {
 
 	// 5
 	decompose(182378912);
-	
+
 	// 6
 	std::cout << digitDifference(1234) << std::endl;
 
@@ -169,7 +165,7 @@ int main() {
 	christmasTree(5);
 
 	// 8
-	//std::cout << supermajority(5) << std::endl;
+	// std::cout << supermajority(5) << std::endl;
 
 	// 9
 	std::cout << pow(2, 10) << std::endl;
