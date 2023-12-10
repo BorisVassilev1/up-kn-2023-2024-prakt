@@ -31,4 +31,6 @@ int *binary_search(const int *begin, const int *end, int x);
 char *combine(const char *str1, const char *str2);
 ```
 
-### 7) const int * vs int const * vs ...
+### 7) const int * vs int const * vs ... (void*) is bad!!
+
+### 8)* Напишете функция, която прочита целия стандартен вход на програмата и връща указател към низ, който съдържа прочетеното от входа.
