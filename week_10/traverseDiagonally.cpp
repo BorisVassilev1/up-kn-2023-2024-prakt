@@ -18,7 +18,7 @@ bool isInBounds(size_t x, size_t y, size_t w, size_t h) {
 	return (x < w) && (y < h);
 }
 
-void traverseDiagonaly(int mat[maxSize][maxSize], size_t size) {
+void traverseDiagonally(int mat[maxSize][maxSize], size_t size) {
 	for(size_t i = 0; i < 2 * size - 1; ++ i) {
 		size_t x, y;
 		if(i < size) { // vertikala
