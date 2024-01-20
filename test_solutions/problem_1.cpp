@@ -12,7 +12,7 @@ int ans(int a[], std::size_t size, int k) {
 			current = 1;
 		}
 	}
-	return longest;
+	return std::max(longest, current); // ако прогресията е в края на редицата
 }
 
 int main() {
