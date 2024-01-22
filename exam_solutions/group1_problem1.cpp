@@ -12,10 +12,18 @@ void sort(int *arr, size_t size) {
 	}
 }
 
-// compares if two arrays are same
+// compares if two sorted arrays contain the same elements
 bool areSame(int *arr1, int *arr2, size_t size) {
-	for (size_t i = 0; i < size; ++i) {
-		if (arr1[i] != arr2[i]) return false;
+	size_t ind1 = 0, ind2 = 0;
+	while(ind1 < size || ind2 < size) {
+		if(ind1 < size - 1 && arr1[ind1] == arr1[ind1+1]) {
+			++ind1; continue;
+		}
+		if(ind2 < size - 1 && arr2[ind2] == arr2[ind2+1]) {
+			++ind2; continue;
+		}
+		if(arr1[ind1] != arr2[ind2]) return false;
+		++ind1; ++ind2;
 	}
 	return true;
 }
