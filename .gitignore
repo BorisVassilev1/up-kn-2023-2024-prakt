@@ -6,3 +6,5 @@
 *.out
 .vscode
 .exe
+*.bin
+week_14/test.txt
